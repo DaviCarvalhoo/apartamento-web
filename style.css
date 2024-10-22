@@ -1,24 +1,23 @@
 *{
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
 body{
   font-family: "Roboto", sans-serif;
 }
 
-header, button{
+header{
   text-align: center;
-  padding: 15px;
-  margin: 20px 5px;
 }
 
 .btn{
   border: none;
   border-radius: 12px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: bold;
+  padding: 20px;
+  margin: 69px 10px;
   color: #32B768;
   background-color: #F0F2F5;
 }
@@ -30,7 +29,7 @@ header, button{
 
 .add-button{
   position: fixed;
-  bottom: 10px;
+  bottom: 20px;
   right: 20px;
   width: 56px;
   height: 56px;
@@ -83,3 +82,4 @@ header, button{
   color: #525766;
   background-color: #E6E6E6;
 }
+
