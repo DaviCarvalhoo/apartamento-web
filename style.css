@@ -1,0 +1,85 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Roboto", sans-serif;
+}
+
+header, button{
+  text-align: center;
+  padding: 15px;
+  margin: 20px 5px;
+}
+
+.btn{
+  border: none;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #32B768;
+  background-color: #F0F2F5;
+}
+
+.btn.active{
+  background-color: #32B768;
+  color: #fff;
+}
+
+.add-button{
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #32B768;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#apartamentos{
+  padding: 0 20px;
+}
+
+.apt-card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 15px;
+}
+.apt-card:nth-child(n+2){
+  margin-top: 35px;
+}
+
+.text{
+  flex: 1;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 15px;
+}
+.full{
+  color: #3D7199;
+  background-color: #E6F1FA;
+}
+.low{
+  color: #993D3D;
+  background-color: #FAE6E6;
+}
+.medium{
+  color: #996D3D;
+  background-color: #FAEED6;
+}
+.default{
+  color: #525766;
+  background-color: #E6E6E6;
+}
