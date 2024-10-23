@@ -32,7 +32,7 @@ function addAptsDOM(apartamento, container) {
   const aptElement = document.createElement('div');
   aptElement.className = `apt-card ${apartamento.color}`; 
   aptElement.innerHTML = `<span class="text">${apartamento.morador} -<b> Apartamento ${apartamento.id}</b></span>
-  <img src="./imgs/${apartamento.color}.png" alt="${apartamento.color}">`;
+  <img src="./imgs/${apartamento.color}.svg" alt="${apartamento.color}">`;
   container.appendChild(aptElement); 
 }
 
