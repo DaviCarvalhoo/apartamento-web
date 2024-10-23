@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
@@ -25,7 +25,7 @@
   <div id="modal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
-        <h2>Adicionar apartamento</h2>
+        <h2>Adicionar apartamento:</h2>
         <span onclick="closeModal()" class="exit">X</span></div>
       <form id="add-apt-form">
         <label for="apt-id">Apartamento:</label>
@@ -42,6 +42,36 @@
         </select>
 
         <button type="submit">Adicionar</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-edit" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Editar:</h2>
+        <span onclick="closeModalEdit()" class="exit">X</span></div>
+      <form id="edit-apt-form">
+        <label for="id">Apartamento:</label>
+        <input type="text" id="id" required>
+                
+        <label for="nome">Morador:</label>
+        <input type="text" id="nome" >
+
+        <label for="color">Nível de Água:</label>
+        <select id="color">
+          <option value="full">Cheio</option>
+          <option value="medium">Medio</option>
+          <option value="low">Vazio</option>
+          <option value="default">Não visto</option>
+          <option value="fill">Enchendo</option>
+        </select>
+
+        <div class="options">
+          <span class="remove" onclick="removeApt()">Remover</span>
+          <button type="submit">Salvar</button>
+        </div>
+        
       </form>
     </div>
   </div>
