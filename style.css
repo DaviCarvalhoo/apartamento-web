@@ -5,6 +5,7 @@
 
 body{
   font-family: "Roboto", sans-serif;
+  color: #525766;
 }
 
 header{
@@ -40,7 +41,7 @@ header{
   background-color: #32B768;
   color: #fff;
   border: none;
-  border-radius: 50%;
+  border-radius: 16px;
   font-size: 36px;
   font-weight: bold;
 }
@@ -101,7 +102,7 @@ header{
 
 .modal-content {
   background-color: #fff;
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 10px;
   width: 80%;
   max-width: 400px;
@@ -124,7 +125,9 @@ header{
 
 
 .modal form button {
-  padding: 10px 20px;
+  text-align: center;
+  margin: 10px;
+  padding: 15px 25px;
   background-color: #32B768;
   color: white;
   border: none;
@@ -134,8 +137,9 @@ header{
 
 .modal form label {
   padding: 10px;
-  margin-right: 10px;
 }
+
+
 
 .modal-header {
   display: flex;
