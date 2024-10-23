@@ -11,8 +11,7 @@ let apts = {
   ]
 };
 
-let cBloco = 'blocoA';
-let cApt = null;
+let cBloco = 'blocoA'; 
 
 function showApts(bloco, element) {
   document.querySelectorAll('.btn.bloco').forEach(button => {
@@ -32,7 +31,7 @@ function showApts(bloco, element) {
 function addAptsDOM(apartamento, container) {
   const aptElement = document.createElement('div');
   aptElement.className = `apt-card ${apartamento.color}`; 
-  aptElement.innerHTML = `<span class="text">${apartamento.morador} - Apartamento ${apartamento.id}</span>
+  aptElement.innerHTML = `<span class="text">${apartamento.morador} -<b> Apartamento ${apartamento.id}</b></span>
   <img src="./imgs/${apartamento.color}.png" alt="${apartamento.color}">`;
   container.appendChild(aptElement); 
 }
@@ -45,6 +44,30 @@ document.addEventListener('DOMContentLoaded', () => {
 const openAddModal = () => {
   document.getElementById('modal').classList.add('active');
 }
+
 const closeModal = () => {
   document.getElementById('modal').classList.remove('active');
 }
+
+document.getElementById('add-apt-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const newAptId = document.getElementById('apt-id').value;
+  const newMorador = document.getElementById('morador-nome').value;
+  const selectedBloco = document.getElementById('bloco').value; 
+
+  const novoApartamento = {
+    id: newAptId,
+    morador: newMorador,
+    color: 'default' 
+  };
+
+  if (selectedBloco in apts) {
+    apts[selectedBloco].push(novoApartamento); 
+    showApts(selectedBloco, document.querySelector(`button[onclick="showApts('${selectedBloco}', this)"]`));
+  } else {
+    console.error(`Bloco ${selectedBloco} não encontrado.`);
+  }
+
+  closeModal();
+});

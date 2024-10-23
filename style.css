@@ -148,3 +148,6 @@ header{
   flex: 1;
   text-align: center;
 }
+.exit, .add-button, .apt-card, .btn{
+  cursor: pointer;
+}
