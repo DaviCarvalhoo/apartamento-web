@@ -139,6 +139,10 @@ header{
   border-radius: 5px;
   cursor: pointer;
 }
+input, select {
+  font-size: 20px; 
+  padding: 10px;
+}
 
 .modal form label {
   padding: 10px;
