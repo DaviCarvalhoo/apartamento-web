@@ -19,7 +19,7 @@ const loadFromLocalStorage = () => {
 document.addEventListener('DOMContentLoaded', () => {
   loadFromLocalStorage();  
   const defaultButton = document.querySelector('.btn.bloco.active');
-  showApts(cBloco, defaultButton);  o
+  showApts(cBloco, defaultButton);  
 });
 
  
