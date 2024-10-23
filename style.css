@@ -38,6 +38,7 @@ header{
   align-items: center;
   justify-content: center;
   text-align: center;
+  line-height: 56px;
 
   background-color: #32B768;
   color: #fff;
