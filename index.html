@@ -29,7 +29,31 @@
     </div>
   </main>
 
-  <button class="add-button">+</button>
+  <div id="modal" class="modal active">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Adicionar apartamento</h2>
+        <span onclick="closeModal()">X</span></div>
+      <form id="add-apt-form">
+        <label for="apt-id">Apartamento:</label>
+        <input type="text" id="apt-id" required>
+                
+        <label for="morador-nome">Morador:</label>
+        <input type="text" id="morador-nome" required>
+
+        <label for="bloco">Bloco:</label>
+        <select id="bloco">
+          <option value="blocoA">Bloco A</option>
+          <option value="blocoB">Bloco B</option>
+          <option value="blocoC">Bloco C</option>
+        </select>
+
+        <button type="submit">Adicionar</button>
+      </form>
+    </div>
+  </div>
+
+  <button class="add-button" onclick="openAddModal()">+</button>
 
   <script src="script.js"></script>
 </body>

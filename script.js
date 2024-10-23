@@ -42,4 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
   showApts(cBloco, defaultButton); 
 });
 
-
+const openAddModal = () => {
+  document.getElementById('modal').classList.add('active');
+}
+const closeModal = () => {
+  document.getElementById('modal').classList.remove('active');
+}
