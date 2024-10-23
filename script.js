@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const openAddModal = () => {
+  document.getElementById('add-apt-form').reset();
   document.getElementById('modal').classList.add('active');
 }
 const openEditModal = (apartamento) => {
