@@ -138,6 +138,7 @@ header{
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
 }
 input, select {
   font-size: 20px; 
@@ -162,12 +163,16 @@ input, select {
 .exit, .add-button, .apt-card, .btn{
   cursor: pointer;
 }
+.exit{
+  font-weight: bold;
+  font-size: 20px;
+}
 
 .remove{
   color: #E92929;
   border: 2px #E92929 solid;
   border-radius: 5px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
   padding: 16px 20px;
   margin: 30px 10px;
