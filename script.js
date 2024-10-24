@@ -109,8 +109,6 @@ const removeApt = () => {
   } else {
     alert('Apartamento não encontrado!');
   }
-
-
 }
 
 document.getElementById('edit-apt-form').addEventListener('submit', function(e){
@@ -133,5 +131,3 @@ document.getElementById('edit-apt-form').addEventListener('submit', function(e){
   saveToLocalStorage();
   closeModalEdit()
 })
-
-
