@@ -112,7 +112,7 @@ const removeApt = () => {
   }
 }
 
-document.getElementById('edit-apt-form').addEventListener('submit', function(e){
+document.getElementById('edit-apt-form').addEventListener('submit', function(e) {
   e.preventDefault()
 
   const old = document.getElementById('old').value
@@ -120,18 +120,18 @@ document.getElementById('edit-apt-form').addEventListener('submit', function(e){
   const aptNome = document.getElementById('nome').value
   const color = document.getElementById('color').value
 
-  for (const bloco in apts) {
-    const aptIndex = apts[bloco].findIndex(apt => apt.id == old)
-    if (aptIndex !== -1) {
-      apts[bloco][aptIndex].id = newAptId 
-      apts[bloco][aptIndex].morador = aptNome
-      apts[bloco][aptIndex].color = color
-      aptFound = true
-      break
-    }
-  }
+  const apartamentosBloco = apts[cBloco]
+  const aptIndex = apartamentosBloco.findIndex(apt => apt.id == old)
 
-  showApts(cBloco, document.querySelector(`button[onclick="showApts('${cBloco}', this)"]`))
-  saveToLocalStorage()
-  closeModalEdit()
+  if (aptIndex !== -1) {
+    apartamentosBloco[aptIndex].id = newAptId
+    apartamentosBloco[aptIndex].morador = aptNome
+    apartamentosBloco[aptIndex].color = color
+
+    showApts(cBloco, document.querySelector(`button[onclick="showApts('${cBloco}', this)"]`))
+    saveToLocalStorage()
+    closeModalEdit()
+  } else {
+    alert('Apartamento não encontrado no bloco atual!')
+  }
 })
