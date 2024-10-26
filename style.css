@@ -99,6 +99,10 @@ header{
   background: #D6D6E6;
   border: 4px solid #5C4A6E;
 }
+.resident{
+  color: #3D996F;
+  background-color: #BFF0BF;
+}
 
 .modal {
   display: none; 
