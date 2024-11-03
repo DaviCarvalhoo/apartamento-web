@@ -135,3 +135,51 @@ document.getElementById('edit-apt-form').addEventListener('submit', function(e) 
     alert('Apartamento não encontrado no bloco atual!')
   }
 })
+let notifiedApartments = new Set();
+let notificationTimeouts = new Map();
+
+const checkForFillApartments = () => {
+  const apartmentsWithFill = document.querySelectorAll('.apt-card.fill');
+
+  apartmentsWithFill.forEach(apartment => {
+    const apartmentId = apartment.querySelector('.text b').textContent;
+    const currentBlock = cBloco;
+    const uniqueKey = `${currentBlock}-${apartmentId}`;
+
+    if (!notifiedApartments.has(uniqueKey)) {
+      Notification.requestPermission().then(permission => {
+        if (permission === 'granted') {
+          notifiedApartments.add(uniqueKey);
+          const timeoutId = setTimeout(() => {
+            new Notification(`Alarme! O apartamento ${apartmentId} no bloco ${currentBlock} está a 20 minutos ligado!`);
+            notifiedApartments.delete(uniqueKey);
+          }, 20 * 60 * 1000);
+
+          notificationTimeouts.set(uniqueKey, timeoutId);
+        }
+      });
+    }
+  });
+
+  const apartmentsWithoutFill = document.querySelectorAll('.apt-card:not(.fill)');
+  apartmentsWithoutFill.forEach(apartment => {
+    const apartmentId = apartment.querySelector('.text b').textContent;
+    const currentBlock = cBloco;
+    const uniqueKey = `${currentBlock}-${apartmentId}`;
+
+    if (notifiedApartments.has(uniqueKey)) {
+      notifiedApartments.delete(uniqueKey);
+      clearTimeout(notificationTimeouts.get(uniqueKey));
+      notificationTimeouts.delete(uniqueKey);
+    }
+  });
+}
+
+setInterval(checkForFillApartments, 1000);
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadFromLocalStorage();
+  const defaultButton = document.querySelector('.btn.bloco.active');
+  showApts(cBloco, defaultButton);
+});
+
